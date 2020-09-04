@@ -1,18 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "react-toastify/dist/ReactToastify.min.css";
 import "./app/layout/style.css";
 import App from "./app/layout/App";
 import * as serviceWorker from "./serviceWorker";
 import "semantic-ui-css/semantic.min.css";
-import { BrowserRouter } from "react-router-dom";
+import { createBrowserHistory } from "history";
+import { Router } from "react-router-dom";
 import ScrollToTop from "../src/app/layout/ScrollToTop";
 
+export const history = createBrowserHistory();
+
 ReactDOM.render(
-  <BrowserRouter>
+  <Router history={history}>
     <ScrollToTop>
       <App />
     </ScrollToTop>
-  </BrowserRouter>,
+  </Router>,
   document.getElementById("root")
 );
 
